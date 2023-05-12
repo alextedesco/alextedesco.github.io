@@ -1,0 +1,138 @@
+/* Reset default styles */
+html,
+body,
+header,
+nav,
+ul,
+li,
+h1,
+p {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    background-image: url('background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    font-family: "Open Sans", sans-serif;
+    color: #ece8e8;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Adjust the alpha value to control the darkness */
+    z-index: -1;
+}
+
+/* General styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* background-image: url('delorean.webp'); */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 20px;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* background-image: url('delorean.webp'); */
+    background-color: rgba(0, 0, 0);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 20px;
+    z-index: 9999;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff4081;
+}
+
+#progress-bar {
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #ff4081;
+    z-index: 9998;
+  }
+
+main {
+    margin-top: 75px;
+    /* Adjust the margin to leave space for the fixed header and nav */
+    padding: 20px;
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 20px; */
+}
+
+.social-icons a {
+    color: #fff;
+    /* Set the icon color to white */
+    font-size: 24px;
+    margin: 0 5px;
+    /* Reduce the space between icons */
+    transition: color 0.3s;
+    /* Add a transition effect for hover */
+}
+
+.social-icons a:hover {
+    color: #ff4081;
+}
+
+footer p {
+    margin-top: 10px;
+    /* Reduce the space above the copyright details */
+}
