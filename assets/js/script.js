@@ -1,43 +1,56 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const progressBar = document.getElementById('progress-bar');
-  
-    window.addEventListener('scroll', function() {
-      const windowHeight = window.innerHeight;
-      const fullHeight = document.body.clientHeight;
-      const scrolled = window.scrollY;
-      const width = (scrolled / (fullHeight - windowHeight)) * 100;
-  
-      progressBar.style.width = width + '%';
-    });
+  const progressBar = document.getElementById('progress-bar');
+  const headerHeight = document.querySelector('header').offsetHeight;
+
+  window.addEventListener('scroll', function() {
+    const windowHeight = window.innerHeight;
+    const fullHeight = document.body.clientHeight;
+    const scrolled = window.scrollY;
+    const width = (scrolled / (fullHeight - windowHeight)) * 100;
+
+    progressBar.style.width = width + '%';
   });
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const headerHeight = document.querySelector('header').offsetHeight;
-  
-    // Scroll to section and adjust for fixed header
-    function scrollToSection(event) {
-      event.preventDefault();
-      const targetId = this.getAttribute('href');
-      const targetPosition = targetId === '#' ? 0 : document.querySelector(targetId).offsetTop - headerHeight;
-  
+  // Scroll to section and adjust for fixed header
+  function scrollToSection(event) {
+    event.preventDefault();
+    const targetId = this.getAttribute('href');
+
+    if (targetId && targetId !== '#') {
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        const targetPosition = targetElement.offsetTop - headerHeight;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    } else {
+      // Scroll to the top when any link with href="#" is clicked
       window.scrollTo({
-        top: targetPosition,
+        top: 0,
         behavior: 'smooth'
       });
     }
-  
-    // Attach click event to each navigation link
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(function(link) {
-      link.addEventListener('click', scrollToSection);
-    });
+  }
+
+  // Attach click event to each navigation link
+  const navLinks = document.querySelectorAll('nav a[href]');
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', scrollToSection);
   });
 
-function roster() {
+  // Open the Resume link in a new tab when clicked
+  const resumeLink = document.getElementById('resume-link');
+  resumeLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    window.open(this.getAttribute('href'), '_blank');
+  });
+});
 
-  document.getElementById("team")
 
-};
 
 
 var imgList = document.getElementById('imgList');

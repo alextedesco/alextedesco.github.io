@@ -40,7 +40,6 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    /* background-image: url('delorean.webp'); */
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -63,13 +62,13 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    /* background-image: url('delorean.webp'); */
     background-color: rgba(0, 0, 0);
     background-size: cover;
     background-position: center;
     color: #fff;
     padding: 20px;
     z-index: 9999;
+    
 }
 
 nav ul {
@@ -78,6 +77,7 @@ nav ul {
 
 nav ul li {
     margin-right: 20px;
+    
 }
 
 nav ul li a {
@@ -88,6 +88,7 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #ff4081;
+    
 }
 
 #progress-bar {
@@ -104,11 +105,18 @@ main {
     margin-top: 75px;
     /* Adjust the margin to leave space for the fixed header and nav */
     padding: 20px;
+    overflow: hidden;
 }
 
 section p {
     width: 70%;
 }
+
+@media (max-width: 745px) {
+    section p {
+      width: 100%;
+    }
+  }
 
 .carousel {
     text-align: center;
@@ -158,17 +166,17 @@ section p {
     width: 20%;
     margin-left: 1.5%;
     margin-right: 1.5%;
-    filter: grayscale(100%);
-    transition: 0.2s;
 }
 
 .carousel li, .carousel img {
     width: 400px;
 }
-  .carousel li:hover {
-    transition: 0.2s;
-    filter: grayscale(0);
-}
+
+@media (max-width: 768px) {
+    .carousel {
+      width: 100%;
+    }
+  }
 
 figure {
     float: right;
@@ -178,6 +186,13 @@ figure {
 figure img {
     border-radius: 5px;
 }
+
+@media (max-width: 745px) {
+    figure {
+      display: none;
+    }
+  }
+  
 
 footer {
     background-color: #000;
