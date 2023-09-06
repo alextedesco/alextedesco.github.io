@@ -1,0 +1,59 @@
+body {
+    background-image: url('../../assets/images/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    font-family: "Open Sans", sans-serif;
+    color: #ece8e8;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Adjust the alpha value to control the darkness */
+    z-index: -1;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.dropdown .label {
+  display: block;
+  cursor: pointer;
+}
+
+.dropdown .label::after {
+  content: "\25BC";
+  float: right;
+  transition: transform 0.3s ease; /* Added transition for smooth arrow rotation */
+}
+
+.dropdown .show .label::after {
+  transform: rotate(180deg); /* Rotate arrow on dropdown show */
+}
+
+.dropdown .show {
+  display: block;
+}
+
+.generate-button {
+  background-color: #ff4081;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.generate-button:hover {
+  opacity: 0.8;
+}

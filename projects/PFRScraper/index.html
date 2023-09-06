@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Tedesco</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="icon" type="image/x-icon" href="../../assets/images/kiwi-fruit-svgrepo-com.svg">
+</head>
+
+<body id="Home">
+  <div class="overlay"></div>
+  <header>
+    <nav>
+      <h1>Alex Tedesco</h1>
+    </nav>
+
+
+  </header>
+  <div id="progress-bar"></div>
+
+  <main>
+    <h2>PFR Scraper</h2>
+    <section>
+      <div class="dropdown">
+        <span class="label" onclick="toggleDropdown('team')">Choose a team &#9660;</span>
+        <select id="team" onchange="updateLabel('team')">
+          <option disabled selected value="">Choose a team</option>
+          <option value="option1">Bills</option>
+          <option value="option2">Jets</option>
+          <option value="option3">Patriots</option>
+        </select>
+      </div>
+
+      <br>
+    
+      <div class="dropdown">
+        <span class="label" onclick="toggleDropdown('position')">Choose a position &#9660;</span>
+        <select id="position" onchange="updateLabel('position')">
+          <option disabled selected value="">Choose a position</option>
+          <option value="option1">QB</option>
+          <option value="option2">RB</option>
+          <option value="option3">WR</option>
+        </select>
+      </div>
+
+      <br>
+    
+      <button class="generate-button">Generate!</button>
+    </section>
+    
+    <script>
+  function toggleDropdown(id) {
+    var dropdown = document.getElementById(id);
+    dropdown.classList.toggle("show");
+  }
+    
+      function updateLabel(id) {
+        var dropdown = document.getElementById(id);
+        var label = dropdown.previousElementSibling;
+        label.innerHTML = label.textContent.split(":")[0] + ": " + dropdown.options[dropdown.selectedIndex].text;
+        label.click();
+      }
+    </script>
+  </main>
+  <footer>
+    <div class="social-icons">
+      <a href="https://github.com/[name]" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/[name]/" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+    <p>&copy; 2023 Alex Tedesco. All rights reserved.</p>
+  </footer>
+  <script src="../../assets/js/script.js"></script>
+</body>
+
+</html>
